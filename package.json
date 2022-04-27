@@ -5,8 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node API/server.js",
-    "dev": "nodemon API/server.js",
-    "heroku-postbuild": "npm install && npm run build"
+    "dev": "nodemon API/server.js"
   },
   "keywords": [
     "api"

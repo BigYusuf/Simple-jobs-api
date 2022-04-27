@@ -1,11 +1,3 @@
-const { StatusCodes } = require('http-status-codes');
-const {CustomAPIError} = require('../errors');
+const notFound = (req, res) => res.status(404).send('Route does not exist')
 
-const notFoundMiddleware = (err, req, res, next) => {
-    if(err instanceof CustomAPIError){
-        return res.status(err.statusCode).json({msg: err.message});
-    }
-    return res.status(StatusCodes.NOT_FOUND).json({ err });
-}
-
-module.exports = notFoundMiddleware;
+module.exports = notFound
